@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<h1>Form submitted, thank you </h1>
+        <p>
+   <ul class="list-group list-group-flush">
+  <li class="list-group-item">{{ first_name }} {{ last_name }}</li>
+  <li class="list-group-item">{{ gender }}</li>
+  <li class="list-group-item">{{ email }}</li>
+  <li class="list-group-item">{{ country }}</li>
+   <li class="list-group-item">{{ message }}</li>
+</ul>
+        </p>
+
+
+		<iframe src="https://giphy.com/embed/Ju7l5y9osyymQ" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+	</div>
+{% endblock %}

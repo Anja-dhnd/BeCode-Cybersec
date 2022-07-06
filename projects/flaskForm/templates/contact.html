@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% block title %} {{ title }}{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Contact Us</h1>
+    <br>
+    {{ error_statement }}
+    <br>
+    <br>
+
+  <form method="POST" action="/success">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputName1">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="first_name"
+          placeholder="First Name"
+          value="{{ request.form['first_name'] }}"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputName2">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="last_name"
+          placeholder="Last Name"
+          value="{{ request.form['last_name'] }}"
+        />
+      </div>
+    </div>
+    <label for="inputGender">Gender</label>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="exampleRadios"
+        id="exampleRadios1"
+        value="male"
+
+      />
+      <label class="form-check-label" for="exampleRadios1"> Male </label>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="exampleRadios"
+        id="exampleRadios2"
+        value="female"
+      />
+      <label class="form-check-label" for="exampleRadios2"> Female </label>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail4">E-mail</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        placeholder="johndoe@mail.com"
+        value="{{ request.form['email'] }}"
+      />
+{#        honeypot#}
+        <input name='fakeemail' type=checkbox value="1" style="display:none !important"
+        tabindex="-1" autocomplete="false"/>
+{#        end honeypot#}
+    </div>
+    <div class="form-group">
+      <label for="inputCountry">Country</label>
+      <select class="form-control form-control-sm" name="country">
+        <option value="Poland">Poland</option>
+        <option value="Lithuania">Lithuania</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="Romania">Romania</option>
+      </select>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        name="subject"
+        value="faulty"
+      />
+      <label class="form-check-label" for="inlineCheckbox1">Faulty item</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        name="subject"
+        value="order"
+      />
+      <label class="form-check-label" for="inlineCheckbox2">Order</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        name="subject"
+        value="other"
+      />
+      <label class="form-check-label" for="inlineCheckbox3">Other</label>
+    </div>
+    <br />
+        <div class="form-group">
+    <label for="exampleFormControlTextarea1">Message</label>
+    <textarea class="form-control" name="message" rows="3" value="message"></textarea>
+  </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  {% endblock %}
+</div>
