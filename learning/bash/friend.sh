@@ -3,11 +3,17 @@
 
 PS3='Hi! Choose your option:'
 
-options=("Date" "Calculator" "Jokes" "Quit") 
+options=("Date" "Weather" "Calculator" "Jokes" "Quit") 
 select option in "${options[@]}"; do 
     case $option in 
         "Date")
         echo "Current date is $(date)"
+        ;;
+        "Weather")
+        set location;
+        echo "Choose your location:"
+        read -r location;
+        echo `wttr.in/{$location}`
         ;;
         "Calculator")
         set a b operation;
